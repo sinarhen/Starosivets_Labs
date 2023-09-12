@@ -9,12 +9,12 @@ export default defineConfig({
   base: "/Starosivets_Labs/",
 
   themeConfig: {
-    nav: [{ text: "Лабораторні", link: "/labs/1" }],
+    nav: [{ text: "Лабораторні", link: "/labs/lab_01/index" }],
 
     sidebar: [
       {
         text: "Лабораторні роботи",
-        items: [{ text: "Лабораторна робота №1", link: "/labs/1" }],
+        items: [{ text: "Лабораторна робота №1", link: "/labs/lab_01/index" }],
       },
     ],
 
