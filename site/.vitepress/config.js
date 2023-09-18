@@ -14,8 +14,9 @@ export default defineConfig({
     sidebar: [
       {
         text: "Лабораторні роботи",
-        items: [{ text: "Лабораторна робота №1", link: "/labs/1" }],
-      },
+        items: [{ text: "Лабораторна робота №1", link: "/labs/1" },
+                { text: "Лабораторна робота №2", link: "/labs/2"} ],
+      },  
     ],
 
     // socialLinks: [
