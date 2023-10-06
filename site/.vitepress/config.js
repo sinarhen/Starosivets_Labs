@@ -7,7 +7,10 @@ export default defineConfig({
 
   // replace knu-template with name of your repository
   base: "/Starosivets_Labs/",
-
+  
+  markdown: {
+    math: true,
+  },
   themeConfig: {
     nav: [{ text: "Лабораторні", link: "/labs/1" }],
 
