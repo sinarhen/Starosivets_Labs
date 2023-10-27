@@ -7,7 +7,8 @@ using namespace std;
 
 namespace lab3 {
     // Declare variables and flags
-    int x = 1, k, accuracy, continueCalc = 1;
+    int x = 1, accuracy, continueCalc = 1;
+    long int k;
     double innerSum, totalSum, temp;
 
     // Function to calculate factorial
@@ -34,7 +35,7 @@ namespace lab3 {
     // Function to display the table header
     void displayTableHeader() {
         cout << "==============================================" << endl;
-        cout << "    x    k     10  innerSum       totalSum       " << endl;
+        cout << "    x    k      innerSum       totalSum       " << endl;
         cout << "==============================================" << endl;
     }
 
@@ -42,17 +43,19 @@ namespace lab3 {
     void calculateTableData() {
         while (x <= 5) {
             while (true) {
-                if (k == accuracy) {
-                    cout << "Reached limit for inner cycle" << endl;
-                    break;
-                }
                 temp = ((calculatePower(-1, k + 1) * calculatePower(x, 2 * k + 1)) /
                         (calculateFactorial(k) * (2 * k + 1)));
 
                 if (fabs(temp) < FLT_MIN) {
+                    std::cout << "Reached FLT_MIN" << endl;
                     break;
                 }
                 innerSum += temp;
+
+                if (fabs(temp) < accuracy) {
+                    std::cout << "Reached accuracy" << endl;
+                    break;
+                }
                 totalSum += innerSum;
                 displayTableRow();
                 k++;
@@ -64,16 +67,15 @@ namespace lab3 {
     }
 
     // Function to ask for accuracy limit
-    int askForAccuracy() {
-        while (!accuracy) {
-            cout << "Enter limit of operations for inner while:";
+    void askForAccuracy() {
+        while(!accuracy){
+            cout << "Enter accuracy: ";
             cin >> accuracy;
-            if (accuracy < 1) {
+            if(accuracy < 0){
+                std:: cout << "Wrong accuracy" << endl;
                 accuracy = 0;
-                cout << "Please provide a valid accuracy" << endl;
             }
         }
-        return accuracy;
     }
 
     // Function to display the result
