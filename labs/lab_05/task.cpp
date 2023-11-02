@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../utils/utils.h"
+#include "../utils.h"
 #include <string>
-#include "../filters/filters.h"
+#include "../filters.h"
 #include <cmath>
 
 using namespace std;
