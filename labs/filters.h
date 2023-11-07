@@ -1,5 +1,6 @@
 #include <iostream>
-# before lab_06
+/* BEFORE lab_06 */
+
 // bool isNumeric(string value){
 //     for (char c : value) {
 //         if (isalpha(c) && c != '-' && c != '.') {
@@ -17,7 +18,8 @@
 //     };
 //     return true;
 // }
-# after lab_06
+
+/* AFTER lab_06 */
 bool isMoreThanOne(int val)
 {
     if (val < 1 ){
