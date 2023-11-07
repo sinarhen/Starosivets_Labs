@@ -26,6 +26,7 @@
 #define UTILS_H
 
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
@@ -33,18 +34,20 @@ using namespace std;
 template <typename T, class... FilterFuncs>
 T getValue(FilterFuncs... funcs) {
     T value;
-    while (true) {
-        cin >> value;
-        if (!(... && funcs(value))) {
-            cout << "Invalid input. Please enter a valid value." << endl;
-        } else if (cin.fail()) {
+    bool isValid = false;
+
+    while (!isValid) {
+        if (!(cin >> value)) {
             cin.clear();
-            cin.ignore(256, '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a valid value." << endl;
+        } else if (!(... && funcs(value))) {
             cout << "Invalid input. Please enter a valid value." << endl;
         } else {
-            return value;
+            isValid = true;
         }
     }
+    return value;
 }
 
 #endif // UTILS_H
