@@ -1,3 +1,0 @@
-C:/Users/Bohdan/CLionProjects/Starosivets_Labs/labs/lab_04/cmake-build-debug/CMakeFiles/lab_04.dir
-C:/Users/Bohdan/CLionProjects/Starosivets_Labs/labs/lab_04/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Bohdan/CLionProjects/Starosivets_Labs/labs/lab_04/cmake-build-debug/CMakeFiles/rebuild_cache.dir
