@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
-#include "../localutils.h"
+#include "../utils/utils.h"
+#include "../filters/filters.h"
 
 using namespace std;
 
@@ -10,12 +11,16 @@ double calculationTask(double x, double y) {
 
 int main(void) {
     cout << "Lab1.Starosivets Bohdan\n---FUNCTION DOES THIS CALCULATIONS: x^3 + 3(x^2)y + y^3 --- " << endl;
-    
-    // Input X value and store it in 'x' 
-    double x = getDoubleValue("Enter x: ");
-    
+
+    string x, y;
+
+    // Input X value and store it in 'x'
+    cout << "Enter the x: ";
+    getValue(x);
+
     // Input Y value and store it in 'y' 
-    double y = getDoubleValue("Enter y: ");
+    cout << "Enter the y: ";
+    getValue(y);
 
     // Define variable result for output
     double result = calculationTask(x, y);

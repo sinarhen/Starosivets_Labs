@@ -26,24 +26,17 @@ namespace lab4_1
     float y, sv, ev, step, standart, error;
 
     // Function to calculate arcsin(x)
-    float arcsin(float x)
+    float arcsinRecursive(float x, float sum = 0, float member = 0, int n = 1)
     {
-        float sum = x, member = x;
-        int n = 1;
+        member = (2 * n - 1) / (2 * n) * (x * x / (2 * n + 1));
+        sum += member;
 
-        do
+        if (fabs(member) < FLT_MIN || fabs(member) > FLT_MAX || fabs(member) >= common::accuracy)
         {
-            member *= (2 * n - 1) / (2 * n) * (x * x / (2 * n + 1));
-            sum += member;
-            n++;
+            return sum;
+        }
 
-            if (fabs(member) < FLT_MIN || fabs(member) > FLT_MAX)
-            {
-                break;
-            }
-        } while (fabs(member) >= common::accuracy);
-
-        return sum;
+        return arcsinRecursive(x, sum, member, n + 1);
     }
 
     // Function to perform task 1
@@ -64,13 +57,13 @@ namespace lab4_1
             bool flag = true;
             if (x >= -2 && x < 0)
             {
-                y = arcsin(x / 2) / arcsin(2 * x);
+                y = arcsinRecursive(x / 2) / arcsinRecursive(2 * x);
                 standart = asin(x / 2) / asin(2 * x);
                 error = fabs(standart - y);
             }
             else if (x >= 0 && x <= 2)
             {
-                y = arcsin(x + 5) / arcsin(x * x);
+                y = arcsinRecursive(x + 5) / arcsinRecursive(x * x);
                 standart = asin(x + 5) / asin(x * x);
                 error = fabs(standart - y);
             }
@@ -97,30 +90,25 @@ namespace lab4_2
     const double pi = 3.14159;
 
     // Function to calculate the value of Pi
-    double calculatePi()
+    double calculatePiRecursive(int i, double member = 0)
     {
-        int i;
-        cout << "Enter i (for example, 10 or more): ";
-        cin >> i;
-        double member = 2 * i + 1;
-        do
+        member = (i > 0) ? (2 * i - 1) + (i * i) / member : 4 / member;
+
+        if (fabs(member - pi) < common::accuracy)
         {
-            if (i > 0)
-                member = (2 * i - 1) + (i * i) / member;
-            else
-                member = 4 / member;
-            i--;
+            return member;
+        }
 
-        } while (fabs(member - pi) >= common::accuracy);
-
-        return member;
+        return calculatePiRecursive(i - 1, member);
     }
-
     // Function to perform task 2
     void run()
     {
         common::enterAccuracy();
-        result = calculatePi();
+        int i;
+        cout << "Enter i value, for example 10 or more";
+        cin >> i;
+        result = calculatePiRecursive(i);
         cout << "The value of the calculated Pi is: " << result << endl;
     }
 }

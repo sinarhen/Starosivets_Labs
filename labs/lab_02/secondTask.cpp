@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../localutils.h"
+#include "../utils/utils.h"
 #include <string.h>
 
 using namespace std;
@@ -11,11 +11,19 @@ int main(void){
     
     std:: cout << "---Lab 02. Second task. Starosivets Bohdan---"<< endl;
 
-    
-    a = stod(getValue("Enter A:", is_more_than_zero));
-    b = stod(getValue("Enter B:", is_more_than_zero));
-    c = stod(getValue("Enter C:", is_more_than_zero));
-    d = stod(getValue("Enter D:", is_more_than_zero));
+
+    cout << "Enter A: ";
+    getValue(a);
+
+    cout << "Enter B: ";
+    getValue(b);
+
+    cout << "Enter C: ";
+    getValue(c);
+
+    cout << "Enter D: ";
+    getValue(d);
+
 
     std:: cout << "\n\n";
 
@@ -30,8 +38,8 @@ int main(void){
 }
 
 
-bool is_more_than_zero(string val){
-    bool exp = stof(val) > 0;
+bool is_more_than_zero(double val){
+    bool exp = val > 0;
     if (!exp)
     {
         std:: cout << "Value must be > 0" << endl;

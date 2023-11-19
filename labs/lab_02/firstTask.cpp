@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../localutils.h"
+#include "../utils/utils.h"
 #include <string.h>
 
 
@@ -11,10 +11,11 @@ int main(void){
     float x, z, res;
     
     std::cout << "---Lab 02. First task. Starosivets Bohdan---"<< endl;
-    
-    x = stof(getValue("Enter X:"));
-    z = stof(getValue("Enter Z:"));
+    cout << "Enter X: ";
+    getValue(x);
 
+    cout << "Enter Z: ";
+    getValue(z);
     std:: cout << "\n\n";
 
     if (x > 0 && z > 0 && x != z)
