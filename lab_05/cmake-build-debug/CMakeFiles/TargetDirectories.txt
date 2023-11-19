@@ -1,0 +1,3 @@
+C:/Users/Bohdan/CLionProjects/Starosivets_Labs/labs/lab_05/cmake-build-debug/CMakeFiles/lab_05.dir
+C:/Users/Bohdan/CLionProjects/Starosivets_Labs/labs/lab_05/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Bohdan/CLionProjects/Starosivets_Labs/labs/lab_05/cmake-build-debug/CMakeFiles/rebuild_cache.dir
