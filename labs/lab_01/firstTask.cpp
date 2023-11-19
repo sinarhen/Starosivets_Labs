@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <string>
-#include "../localutils.h" // Assuming localutils.h contains necessary functions.
+#include "../utils/utils.h" // Assuming localutils.h contains necessary functions.
 
 using namespace std;
 
@@ -13,13 +12,16 @@ int main()
     cout << "Lab1.Starosivets Bohdan\n--- FUNCTION DOES THIS CALCULATIONS: arctg(4A/(B*B*C) - 1)^0.5 --- " << endl;
     
     // Input A value and store it in 'a'.
-    double a = getDoubleValue("Enter the A value:");
+    double a, b, c;
 
-    // Input B value and store it in 'b'.
-    double b = getDoubleValue("Enter the B value: ");
+    cout << "Enter the A" << endl;
+    getValue(a);
 
-    // Input C value and store it in 'c'.
-    double c = getDoubleValue("Enter the C value: ");
+    cout << "Enter the B" << endl;
+    getValue(b);
+
+    cout << "Enter the C" << endl;
+    getValue(c);
 
     // Call the calculationTask function with three parameters and print the result.
     cout << "Answer is " << calculationTask(a, b, c);

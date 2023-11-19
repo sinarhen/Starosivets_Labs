@@ -1,14 +1,16 @@
 #include <iostream>
-#include "../utils.h"
+#include "../utils/utils.h"
+#include "../filters/filters.h"
 #include <string>
-#include "../filters.h"
 #include <cmath>
 
 using namespace std;
 
 // Function to get an integer value that is more than one
 int getIntegerMoreThanOne(){
-    return stoi(getValue(isNumeric, isMoreThanOne));
+    return getValue<int>([&](int val){
+        return val >= 1;
+    });
 }
 
 namespace lab5_1 {
@@ -36,17 +38,17 @@ namespace lab5_1 {
     void run() {
         int a, b;
 
-        cout << "Enter the value of a: " << endl;
+        cout << "Enter the value of a(must be >= 1): " << endl;
         a = getIntegerMoreThanOne();
 
-        cout << "Enter the value of b: " << endl;
+        cout << "Enter the value of b(must be >= 1): " << endl;
         b = getIntegerMoreThanOne();
 
         cout << "A is " << a << "\tB is " << b << endl;
 
         // Calculate and display the result using the recursive approach
         int result = calculateRecursive(a, b);
-        
+
         // Calculate and display the result using the iterative approach
         if (result != calculateIterative(a, b)) {
             cout << "Result mismatch between recursive and iterative methods." << endl;
@@ -101,13 +103,14 @@ int main() {
     cout << "Laboratory work 5. Made by Starosivets Bohdan (Variant 8)" << "\n\n\n";
 
     cout << "Choose task: (1 or 2)";
-    string task = getValue([](string val){
+    string task = getValue<string>([](string val){
         return (val == "1" || val == "2");
     });
 
     if (task == "1"){
         lab5_1::run();
     }
+
     if (task == "2"){
         lab5_2::run();
     }
