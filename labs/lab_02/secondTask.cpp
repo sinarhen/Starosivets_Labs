@@ -13,17 +13,16 @@ int main(void){
 
 
     cout << "Enter A: ";
-    getValue(a);
+    a = getValue<double>();
 
     cout << "Enter B: ";
-    getValue(b);
+    b = getValue<double>();
 
     cout << "Enter C: ";
-    getValue(c);
+    c = getValue<double>();
 
     cout << "Enter D: ";
-    getValue(d);
-
+    d = getValue<double>();
 
     std:: cout << "\n\n";
 

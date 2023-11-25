@@ -12,15 +12,15 @@ double calculationTask(double x, double y) {
 int main(void) {
     cout << "Lab1.Starosivets Bohdan\n---FUNCTION DOES THIS CALCULATIONS: x^3 + 3(x^2)y + y^3 --- " << endl;
 
-    string x, y;
+    double x, y;
 
     // Input X value and store it in 'x'
     cout << "Enter the x: ";
-    getValue(x);
+    x = getValue<double>();
 
     // Input Y value and store it in 'y' 
     cout << "Enter the y: ";
-    getValue(y);
+    y = getValue<double>();
 
     // Define variable result for output
     double result = calculationTask(x, y);

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../../filters/filters.h"
 #include "../../utils/utils.h"
 
@@ -9,13 +8,10 @@ int getSize() {
     return val;
 }
 
-char getYesOrNo() {
-    char response;
-    cin >> response;
-    return response;
-}
-
 char getFillMethod() {
+    cout << "Available methods";
+    cout << " 'r' - random" << endl;
+    cout << " 'm' - manual" << endl;
     char method;
     method = getValue<char>([](char val) {
         return (val == 'r' || val == 'm');

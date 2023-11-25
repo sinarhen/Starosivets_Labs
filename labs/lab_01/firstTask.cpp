@@ -15,13 +15,13 @@ int main()
     double a, b, c;
 
     cout << "Enter the A" << endl;
-    getValue(a);
+    a = getValue<int>();
 
     cout << "Enter the B" << endl;
-    getValue(b);
+    b = getValue<int>();
 
     cout << "Enter the C" << endl;
-    getValue(c);
+    c = getValue<int>();
 
     // Call the calculationTask function with three parameters and print the result.
     cout << "Answer is " << calculationTask(a, b, c);

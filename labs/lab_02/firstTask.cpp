@@ -12,10 +12,10 @@ int main(void){
     
     std::cout << "---Lab 02. First task. Starosivets Bohdan---"<< endl;
     cout << "Enter X: ";
-    getValue(x);
+    x = getValue<int>();
 
     cout << "Enter Z: ";
-    getValue(z);
+    z = getValue<int>();
     std:: cout << "\n\n";
 
     if (x > 0 && z > 0 && x != z)

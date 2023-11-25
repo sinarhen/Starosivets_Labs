@@ -1,22 +1,11 @@
 #include <iostream>
 #include "../../utils/utils.h"
+#include "utils.h"
 
 
 using namespace std;
 // function to ask from user size of array
 int getSize();
-
-// function to get random number
-template <typename T>
-T getRandomNumber(T from, T to) {
-    if (from > to) {
-        std::cout << "From argument can't be less than to\n";
-        return 0.0;
-    }
-
-    double randomValue = (static_cast<double>(std::rand()) / RAND_MAX) * (to - from) + from;
-    return randomValue;
-}
 
 // function to create array filled with random numbers
 
@@ -27,7 +16,7 @@ T* createArrayWithRandomNumbers(int size, T from, T to) {
     T* array = new T[size];
 
     for (int i = 0; i < size; i++) {
-        T randomValue = static_cast<T>(getRandomNumber<T>(static_cast<T>(from), static_cast<T>(to)));
+        T randomValue = static_cast<T>(getRandomNumber(static_cast<int>(from), static_cast<int>(to)));
         array[i] = randomValue;
     }
 
@@ -83,4 +72,3 @@ T* constructArray(int size, char fillMethod) {
     return arrayPointer;
 }
 
-char getYesOrNo();

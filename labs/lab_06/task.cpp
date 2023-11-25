@@ -5,7 +5,7 @@
 using namespace std;
 
 namespace lab6_01 {
-    void findSmallestCommonElement(int *firstArray, int firstArraySize, int *secondArray, int secondArraySize) {
+    void findSmallestCommonElement(int firstArray[], int firstArraySize, int *secondArray, int secondArraySize) {
         int smallestCommonElement = INT_MAX; // Initial value for finding the smallest common element
         int smallestCommonElementIndex = -1; // Index of the smallest common element
 
@@ -40,8 +40,6 @@ namespace lab6_01 {
         int firstArraySize = getSize();
 
         cout << "Select fill method:" << endl;
-        cout << " 'r' - random" << endl;
-        cout << " 'm' - manual" << endl;
         char fillMethod = getFillMethod();
         int *firstArray = constructArray<int>(firstArraySize, fillMethod);
         cout << "First array created." << endl << endl;
@@ -50,8 +48,6 @@ namespace lab6_01 {
         cout << "Enter the size of the second array: ";
         int secondArraySize = getSize();
         cout << "Select fill method:" << endl;
-        cout << " 'r' - random" << endl;
-        cout << " 'm' - manual";
         fillMethod = getFillMethod();
         int *secondArray = constructArray<int>(secondArraySize, fillMethod);
         cout << "Second array created." << endl << endl;
@@ -110,7 +106,7 @@ namespace lab6_02 {
         }
     }
 
-    pair<int, int> binarySearchRecursive(int* arr, int start, int end, int target, int steps = 0) {
+    pair<int, int> binarySearchRecursive(int arr[], int start, int end, int target, int steps = 0) {
         if (start > end) {
             return make_pair(-1, steps);
         }
@@ -137,8 +133,6 @@ namespace lab6_02 {
         int arraySize = getSize();
 
         cout << "Select fill method:" << endl;
-        cout << " 'r' - random" << endl;
-        cout << " 'm' - manual" << endl;
         char fillMethod = getFillMethod();
 
         int *array = constructArray<int>(arraySize, fillMethod);
@@ -191,7 +185,7 @@ namespace lab6_02 {
 namespace lab6_03 {
 
 // Function to print a polynomial
-    void printPolynomial(const double *coefficients, int degree) {
+    void printPolynomial(const double coefficients[], int degree) {
         bool firstTerm = true;
         for (int i = degree; i >= 0; i--) {
             double coefficient = coefficients[i];
@@ -238,16 +232,12 @@ namespace lab6_03 {
         }));
 
         cout << "Fill method for coefficients for n polynomial:" << endl;
-        cout << " 'r' - random" << endl;
-        cout << " 'm' - manual" << endl;
         char fillMethod = getFillMethod();
         auto* coefficientsM = constructArray<double>(m, fillMethod);
         cout << "Array created:" << endl;
         outputArray(coefficientsM, m);
 
         cout << "Fill method for coefficients for m polynomial:" << endl;
-        cout << " 'r' - random" << endl;
-        cout << " 'm' - manual" << endl;
         fillMethod = getFillMethod();
         auto* coefficientsN = constructArray<double>(n, fillMethod);
         cout << "Array created:" << endl;

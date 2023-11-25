@@ -6,6 +6,7 @@
 
 using namespace std;
 
+char getYesOrNo();
 
 template <typename T, class... FilterFuncs>
 T getValue(FilterFuncs... funcs) {
@@ -25,5 +26,8 @@ T getValue(FilterFuncs... funcs) {
     }
     return value;
 }
+
+// function to get random number
+double getRandomNumber(int from, int to);
 
 #endif // UTILS_H
