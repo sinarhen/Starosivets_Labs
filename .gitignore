@@ -9,6 +9,7 @@ site/.vitepress/cache/
 /.idea/
 **/cmake-build-debug
 **/.github
+*.exe
 # User-specific files
 *.rsuser
 *.suo
