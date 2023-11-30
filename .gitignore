@@ -6,8 +6,9 @@
 # Custom
 /site/.vitepress/cache/
 site/.vitepress/cache/
-/.idea/
-**/cmake-build-debug
+**/.idea/
+**/cmake-build*
+*CMakeLists.txt
 **/.github
 *.exe
 # User-specific files
