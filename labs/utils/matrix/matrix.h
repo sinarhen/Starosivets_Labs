@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 template <typename T>
 void deallocateMatrix(T**& matrix, int rows) {
     if (matrix == nullptr) {
@@ -426,4 +427,3 @@ void operationsOnMatrix(T** matrix, int n, int m)
     } while (choice == 'y');
 
 }
-
